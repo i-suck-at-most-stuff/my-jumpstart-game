@@ -1,0 +1,93 @@
+[gd_scene load_steps=11 format=3 uid="uid://darhqoaxyjte4"]
+
+[ext_resource type="Texture2D" uid="uid://dk1usvxllmeou" path="res://buttons/start_game.png" id="1_7vrkn"]
+[ext_resource type="Script" uid="uid://bybb8lwxpwyli" path="res://main_menu.gd" id="1_8qtwp"]
+[ext_resource type="Texture2D" uid="uid://b6pmqqjtsk45t" path="res://frame-thing-export-start.png" id="1_glbon"]
+[ext_resource type="Texture2D" uid="uid://bnnx5khl6ul4p" path="res://buttons/start_game_pushed.png" id="3_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://6ha8gysvb206" path="res://character_guy_left.png" id="7_8qtwp"]
+[ext_resource type="Texture2D" uid="uid://bgfyikxmlijar" path="res://buttons/exit.png" id="7_dy7ct"]
+[ext_resource type="Texture2D" uid="uid://cui1crj0hh1mj" path="res://buttons/exit-pushed.png" id="8_0o4t1"]
+[ext_resource type="Script" uid="uid://b5raycrki1sty" path="res://character_guy_left.gd" id="8_dy7ct"]
+[ext_resource type="Texture2D" uid="uid://3yywj6c1bkve" path="res://character_guy.png" id="9_0o4t1"]
+[ext_resource type="Script" uid="uid://cobgcujgy5a16" path="res://character_guy.gd" id="10_0k4wn"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 46.0
+offset_right = 11.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8qtwp")
+
+[node name="Frame" type="Sprite2D" parent="."]
+position = Vector2(565, 278)
+texture = ExtResource("1_glbon")
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -159.0
+offset_top = 15.0
+offset_right = 113.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButtonTexture" type="TextureButton" parent="Start"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -2.5
+offset_right = 272.0
+offset_bottom = 69.5
+texture_normal = ExtResource("1_7vrkn")
+texture_pressed = ExtResource("3_fu7sn")
+texture_hover = ExtResource("3_fu7sn")
+stretch_mode = 0
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.0
+offset_top = 112.0
+offset_right = 115.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ExitButtonTexture" type="TextureButton" parent="Exit"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 272.0
+offset_bottom = 71.0
+texture_normal = ExtResource("7_dy7ct")
+texture_pressed = ExtResource("8_0o4t1")
+texture_hover = ExtResource("8_0o4t1")
+stretch_mode = 0
+
+[node name="CharacterGuyLeft" type="Sprite2D" parent="."]
+position = Vector2(808, 416)
+texture = ExtResource("7_8qtwp")
+script = ExtResource("8_dy7ct")
+
+[node name="CharacterGuy" type="Sprite2D" parent="."]
+position = Vector2(308, 280)
+texture = ExtResource("9_0o4t1")
+script = ExtResource("10_0k4wn")
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Start/StartButtonTexture" to="." method="_on_start_button_texture_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Exit/ExitButtonTexture" to="." method="_on_exit_button_texture_pressed"]

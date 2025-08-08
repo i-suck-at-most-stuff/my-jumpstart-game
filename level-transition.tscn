@@ -1,0 +1,133 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1500txswegj4"]
+
+[ext_resource type="Texture2D" uid="uid://cqpm8frqgrgyk" path="res://frame-form-level-transition.png" id="1_5qlm0"]
+[ext_resource type="Script" uid="uid://dkcci7huv7ncb" path="res://level_transition.gd" id="1_oelld"]
+[ext_resource type="Texture2D" uid="uid://c34iliessbhmk" path="res://buttons/next-level-button.png" id="2_oelld"]
+[ext_resource type="Texture2D" uid="uid://ba6twvp28h26k" path="res://buttons/next-level-button-pressed.png" id="3_ell56"]
+[ext_resource type="Texture2D" uid="uid://bgfyikxmlijar" path="res://buttons/exit.png" id="4_ijqpq"]
+[ext_resource type="Texture2D" uid="uid://cui1crj0hh1mj" path="res://buttons/exit-pushed.png" id="5_qm01l"]
+
+[node name="Level Transition Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 46.0
+offset_right = 11.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oelld")
+
+[node name="Frame" type="Sprite2D" parent="."]
+position = Vector2(565, 278)
+texture = ExtResource("1_5qlm0")
+
+[node name="Next" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = 39.0
+offset_right = 131.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NextButtonTexture" type="TextureButton" parent="Next"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -2.5
+offset_right = 272.0
+offset_bottom = 69.5
+texture_normal = ExtResource("2_oelld")
+texture_pressed = ExtResource("3_ell56")
+texture_hover = ExtResource("3_ell56")
+stretch_mode = 0
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = 125.0
+offset_right = 132.0
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ExitButtonTexture" type="TextureButton" parent="Exit"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 272.0
+offset_bottom = 71.0
+texture_normal = ExtResource("4_ijqpq")
+texture_pressed = ExtResource("5_qm01l")
+texture_hover = ExtResource("5_qm01l")
+stretch_mode = 0
+
+[node name="TimerLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.586
+anchor_top = 0.458
+anchor_right = 0.719
+anchor_bottom = 0.519
+offset_left = -0.0720215
+offset_top = -0.784027
+offset_right = -0.288025
+offset_bottom = -0.312042
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.188235, 0.384314, 0.188235, 1)
+theme_override_colors/font_shadow_color = Color(0.188235, 0.384314, 0.188235, 1)
+theme_override_colors/font_outline_color = Color(0.188235, 0.384314, 0.188235, 1)
+theme_override_font_sizes/font_size = 50
+
+[node name="DeathLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.586
+anchor_top = 0.31
+anchor_right = 0.725
+anchor_bottom = 0.37
+offset_left = -5.07202
+offset_top = 0.119995
+offset_right = -0.200012
+offset_bottom = 0.23999
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.188235, 0.384314, 0.188235, 1)
+theme_override_colors/font_shadow_color = Color(0.188235, 0.384314, 0.188235, 1)
+theme_override_colors/font_outline_color = Color(0.188235, 0.384314, 0.188235, 1)
+theme_override_font_sizes/font_size = 50
+
+[node name="CoinsLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.592
+anchor_top = 0.151
+anchor_right = 0.723
+anchor_bottom = 0.224
+offset_left = 0.0159912
+offset_top = 0.151993
+offset_right = 0.103943
+offset_bottom = -0.152008
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.188235, 0.384314, 0.188235, 1)
+theme_override_colors/font_shadow_color = Color(0.188235, 0.384314, 0.188235, 1)
+theme_override_colors/font_outline_color = Color(0.188235, 0.384314, 0.188235, 1)
+theme_override_font_sizes/font_size = 50
+
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Next/NextButtonTexture" to="." method="_on_next_button_texture_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Exit/ExitButtonTexture" to="." method="_on_exit_button_texture_pressed"]

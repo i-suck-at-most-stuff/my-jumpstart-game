@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwaom521rjf02"]
+
+[ext_resource type="Texture2D" uid="uid://c0gp7hyoj3m4v" path="res://frame-thing-export-blank.png" id="1_x2hje"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 46.0
+offset_right = 11.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Frame" type="Sprite2D" parent="."]
+position = Vector2(32, -151)
+texture = ExtResource("1_x2hje")
+offset = Vector2(533, 429)

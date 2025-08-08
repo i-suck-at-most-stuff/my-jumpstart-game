@@ -1,0 +1,106 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnfcldu6ubanw"]
+
+[ext_resource type="Script" uid="uid://bwkcygra3ekdf" path="res://the_end.gd" id="1_dsela"]
+[ext_resource type="Texture2D" uid="uid://xitslwakctij" path="res://frame-end.png" id="2_rsgg8"]
+[ext_resource type="Texture2D" uid="uid://cklmij11bwb0v" path="res://buttons/replay-button.png" id="3_ctstw"]
+[ext_resource type="Texture2D" uid="uid://tmgd2tmgsym6" path="res://buttons/replay-button-pressed.png" id="4_53eva"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 46.0
+offset_right = 11.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dsela")
+
+[node name="Frame" type="Sprite2D" parent="."]
+position = Vector2(32, -151)
+texture = ExtResource("2_rsgg8")
+offset = Vector2(533, 429)
+
+[node name="Replay" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = 105.0
+offset_right = 107.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ReplayButtonTexture" type="TextureButton" parent="Replay"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -2.5
+offset_right = 272.0
+offset_bottom = 69.5
+texture_normal = ExtResource("3_ctstw")
+texture_pressed = ExtResource("4_53eva")
+texture_hover = ExtResource("4_53eva")
+stretch_mode = 0
+
+[node name="TimerLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.603
+anchor_top = 0.281
+anchor_right = 0.719
+anchor_bottom = 0.387
+offset_left = 0.343933
+offset_top = -0.0880127
+offset_right = -0.287964
+offset_bottom = 0.223984
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.188235, 0.384314, 0.188235, 1)
+theme_override_colors/font_shadow_color = Color(0.188235, 0.384314, 0.188235, 1)
+theme_override_colors/font_outline_color = Color(0.188235, 0.384314, 0.188235, 1)
+theme_override_font_sizes/font_size = 50
+
+[node name="DeathLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.597
+anchor_top = 0.41
+anchor_right = 0.725
+anchor_bottom = 0.517
+offset_left = 0.255981
+offset_top = 0.319977
+offset_right = -0.200012
+offset_bottom = -0.0160217
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.188235, 0.384314, 0.188235, 1)
+theme_override_colors/font_shadow_color = Color(0.188235, 0.384314, 0.188235, 1)
+theme_override_colors/font_outline_color = Color(0.188235, 0.384314, 0.188235, 1)
+theme_override_font_sizes/font_size = 50
+
+[node name="CoinsLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.591
+anchor_top = 0.546
+anchor_right = 0.723
+anchor_bottom = 0.639
+offset_left = 0.167969
+offset_top = -8.80801
+offset_right = 0.104004
+offset_bottom = -0.072052
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.188235, 0.384314, 0.188235, 1)
+theme_override_colors/font_shadow_color = Color(0.188235, 0.384314, 0.188235, 1)
+theme_override_colors/font_outline_color = Color(0.188235, 0.384314, 0.188235, 1)
+theme_override_font_sizes/font_size = 50
+
+[connection signal="pressed" from="Replay" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="Replay/ReplayButtonTexture" to="." method="_on_replay_button_texture_pressed"]
